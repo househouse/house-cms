@@ -1,0 +1,40 @@
+{
+  "name": "house-cms",
+  "version": "1.0.0",
+  "description": "A (mostly) api agnostic SSR-PWA frontend for REST compatable CMS platforms",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint -ext .js,.vue --ignore-path .gitignore .",
+    "preflight": "npm run lint",
+    "test": "test"
+  },
+  "keywords": [
+    "nuxt",
+    "vue",
+    "cms",
+    "framework",
+    "server-rendering",
+    "progressive-web-app"
+  ],
+  "author": "House House Design",
+  "license": "MIT",
+  "dependencies": {
+    "@nuxtjs/pwa": "^1.0.2",
+    "axios": "^0.17.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nuxt": "^1.0.0-rc11",
+    "nuxt-modules": "^0.11.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.2.2",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
