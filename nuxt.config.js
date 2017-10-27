@@ -5,7 +5,7 @@ module.exports = {
   ],
   dev: {},
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrl: 'http://localhost:8888/wp-json/wp/v2',
   },
   generate: {},
   head: {
@@ -22,7 +22,6 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/pwa',
-    'axios',
   ],
   plugins: [],
 };

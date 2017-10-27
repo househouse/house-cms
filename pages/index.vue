@@ -5,29 +5,38 @@
 </template>
 
 <script>
+import api from '@/api';
+
   export default {
+    async asyncData({ params }) {
+      const { data } = await api.getPosts();
+
+      return {
+        posts: data,
+      };
+    },
     data () {
       return {
-        online: true
-      }
+        online: true,
+      };
     },
     mounted () {
       if (!window.navigator) {
         this.online = false
         return
       }
-      this.online = Boolean(window.navigator.onLine)
-      window.addEventListener('offline', this._toggleNetworkStatus)
-      window.addEventListener('online', this._toggleNetworkStatus)
+      this.online = Boolean(window.navigator.onLine);
+      window.addEventListener('offline', this.toggleNetworkStatus);
+      window.addEventListener('online', this.toggleNetworkStatus);
     },
     methods: {
-      _toggleNetworkStatus ({ type }) {
+      toggleNetworkStatus ({ type }) {
         this.online = type === 'online'
       }
     },
     destroyed () {
-      window.removeEventListener('offline', this._toggleNetworkStatus)
-      window.removeEventListener('online', this._toggleNetworkStatus)
+      window.removeEventListener('offline', this.toggleNetworkStatus)
+      window.removeEventListener('online', this.toggleNetworkStatus)
     }
   }
 </script>
